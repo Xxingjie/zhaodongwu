@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>农场小帮手躲猫猫</title>
+  <meta name="description" content="适合幼儿园教室大屏使用的秋日农场观察与口语表达游戏">
+  <link rel="stylesheet" href="game.css">
+</head>
+<body>
+  <main class="game-shell">
+    <section class="game-stage" aria-label="秋天的魔法农场找动物游戏">
+      <header class="topbar">
+        <div class="title-wrap">
+          <span class="leaf-mark">◆</span>
+          <div><p class="eyebrow">秋日观察游戏</p><h1>农场小帮手躲猫猫</h1></div>
+        </div>
+        <div class="top-actions">
+          <div class="progress" id="progress" aria-label="已找到 0 只小动物">
+            <span>已找到</span><i></i><i></i><i></i><b>0/3</b>
+          </div>
+          <button class="round-btn" id="soundButton" aria-label="关闭语音">有声</button>
+          <button class="round-btn guide-btn" id="guideButton">教师引导</button>
+        </div>
+      </header>
+
+      <div class="farm-board">
+        <img class="farm-image" src="assets/autumn-magic-farm.png" alt="有向日葵、谷仓、葡萄架、苹果树和南瓜田的秋天农场，三只小动物藏在其中">
+        <div class="warm-vignette"></div>
+        <button class="animal-hotspot bee" data-animal="bee" aria-label="点击寻找小蜜蜂" disabled>
+          <span class="reveal-crop"><img src="assets/autumn-magic-farm.png" alt=""></span><span class="animal-label">找到小蜜蜂！</span>
+        </button>
+        <button class="animal-hotspot squirrel" data-animal="squirrel" aria-label="点击寻找小松鼠" disabled>
+          <span class="reveal-crop"><img src="assets/autumn-magic-farm.png" alt=""></span><span class="animal-label">找到小松鼠！</span>
+        </button>
+        <button class="animal-hotspot rabbit" data-animal="rabbit" aria-label="点击寻找小兔子" disabled>
+          <span class="reveal-crop"><img src="assets/autumn-magic-farm.png" alt=""></span><span class="animal-label">找到小兔子！</span>
+        </button>
+        <div class="observation-hint" id="hint">仔细观察画面里的每一个角落</div>
+
+        <aside class="teacher-guide" id="teacherGuide" hidden>
+          <button id="closeGuide" aria-label="关闭教师引导">×</button>
+          <p class="guide-kicker">教师引导语</p><h2>问一问，说完整</h2>
+          <ul><li>农场里藏着哪些小动物？</li><li>你找到了谁？</li><li>它藏在什么地方？</li><li>谁能用一句完整的话说一说？</li></ul>
+        </aside>
+
+        <div class="celebration" id="celebration" role="dialog" aria-label="成功找到全部动物" hidden>
+          <div class="star-field" aria-hidden="true">✦ ✧ ★ ✦ ★ ✧ ✦</div>
+          <img src="assets/farm-friends-celebration.png" alt="米菲和蜜蜂、松鼠、小兔子一起庆祝">
+          <div class="celebration-copy">
+            <p>太棒啦！三个小帮手都找到了</p><h2>你们真是善于观察的小朋友！</h2>
+            <span>谢谢你们找到了农场里的小帮手！</span><button id="resetButton">再玩一次</button>
+          </div>
+        </div>
+      </div>
+
+      <footer class="control-deck">
+        <div class="speech-card" aria-live="polite"><span class="speaker-dot">语音</span><p id="message">准备好了吗？一起去农场找朋友吧！</p></div>
+        <button class="primary-btn" id="startButton"><span class="search-icon">⌕</span>寻找农场小帮手</button>
+        <div class="sentence-strip" id="sentenceStrip" hidden><span>请完整地说一说</span><p id="sentence">我在______找到了______。</p></div>
+      </footer>
+    </section>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
